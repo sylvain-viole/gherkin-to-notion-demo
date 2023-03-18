@@ -178,8 +178,8 @@ const createPageFromFile = async (file, DBId) => {
 };
 
 const cleanDB = async (DBId) => {
-  const results = await notion.databases.query({ database_id: DBId });
-  if (results.length) {
+  const response = await notion.databases.query({ database_id: DBId });
+  if (response.results.length) {
     response.results.forEach((page) => {
       notion.pages.update({ page_id: page.id, archived: true });
     });
@@ -193,10 +193,11 @@ const logDB = async (DBId) => {
 
 const files = getFeatureFiles(FEATURE_FOLDER);
 const featureObject = getFeatureFilesAsObject(files);
-console.log(`🚮 Cleaning db ${NOTION_DB_ID}`);
 (async () => {
   try {
+    console.log(`🚮 Cleaning db ${NOTION_DB_ID}`);
     await cleanDB(NOTION_DB_ID);
+    console.log(`✅ Cleaned db ${NOTION_DB_ID}`);
     console.log(`Sending Gherkin to db ${NOTION_DB_ID}`);
     do {
       console.log(
@@ -209,6 +210,6 @@ console.log(`🚮 Cleaning db ${NOTION_DB_ID}`);
     } while (featureObject.length);
     console.log(`✅ Gherkin sent to db ${NOTION_DB_ID}`);
   } catch (err) {
-    console.error(err.body)
+    console.error(err.body);
   }
 })();
