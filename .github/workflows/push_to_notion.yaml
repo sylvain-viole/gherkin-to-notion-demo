@@ -1,11 +1,11 @@
-name: 'push gherkin to notion'
+name: "push gherkin to notion"
 
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     paths:
-      - '**.feature'
+      - "**.feature"
 
 jobs:
   push_to_notion:
@@ -24,4 +24,7 @@ jobs:
         run: npm ci
 
       - name: push
+        env:
+          NOTION_DB_ID: ${{ secrets.NOTION_DB_ID }}
+          NOTION_SECRET: ${{ secrets.NOTION_SECRET }}
         run: node notion_integration.js

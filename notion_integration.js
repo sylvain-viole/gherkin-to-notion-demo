@@ -3,8 +3,8 @@ const path = require("path");
 const gherkinParser = require("gherkin-parse");
 const { Client } = require("@notionhq/client");
 
-const NOTION_SECRET = "secret_7QQ0li2SSV5yYgHft6B5GvjEy6HkQWUqxmlEjo0fIno";
-const NOTION_DB_ID = "6d4e441d13264aeba6b9488d92275679";
+const NOTION_SECRET = process.env.NOTION_SECRET;
+const NOTION_DB_ID = process.env.NOTION_DB_ID;
 const FEATURE_FOLDER = "./features";
 
 // Initializing a client
