@@ -196,7 +196,7 @@ const featureObject = getFeatureFilesAsObject(files);
 console.log(`🚮 Cleaning db ${NOTION_DB_ID}`);
 (async () => {
   try {
-    cleanDB(NOTION_DB_ID);
+    await cleanDB(NOTION_DB_ID);
     console.log(`Sending Gherkin to db ${NOTION_DB_ID}`);
     do {
       console.log(
