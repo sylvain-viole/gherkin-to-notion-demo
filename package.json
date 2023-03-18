@@ -8,5 +8,9 @@
   },
   "type": "module",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@notionhq/client": "^2.2.3",
+    "gherkin-parse": "^1.0.6"
+  }
 }
