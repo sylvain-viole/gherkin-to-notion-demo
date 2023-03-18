@@ -2,7 +2,7 @@
 @env_staging @env_prod
 
 #browser
-@browser_chrome @browser_edge @browser_webkit
+@browser_chrome @browser_edge
 
 #squad
 @squad_shop

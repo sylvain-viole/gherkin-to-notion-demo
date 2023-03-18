@@ -1,4 +1,4 @@
-name: "push gherkin to notion"
+name: 'push gherkin to notion'
 
 on:
   push:
