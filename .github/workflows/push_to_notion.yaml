@@ -1,10 +1,11 @@
-name: 'push gherkin to notion'
+name: "push gherkin to notion"
 
 on:
   push:
+    branches:
+      - 'main'
     paths:
-      - "**.feature"
-    branches: ["main"]
+      - '**.feature'
 
 jobs:
   push_to_notion:
@@ -24,6 +25,3 @@ jobs:
 
       - name: push
         run: node notion_integration.js
-
-    
-
