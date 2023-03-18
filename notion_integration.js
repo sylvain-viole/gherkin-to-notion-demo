@@ -178,8 +178,8 @@ const createPageFromFile = async (file, DBId) => {
 };
 
 const cleanDB = async (DBId) => {
-  const response = await notion.databases.query({ database_id: DBId });
-  if (response.results.length) {
+  const results = await notion.databases.query({ database_id: DBId });
+  if (results.length) {
     response.results.forEach((page) => {
       notion.pages.update({ page_id: page.id, archived: true });
     });
