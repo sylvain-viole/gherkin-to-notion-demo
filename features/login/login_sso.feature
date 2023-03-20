@@ -8,7 +8,7 @@
 @squad_connect
 
 
-Feature: User SSO log in
+Feature: User SSO log i
 
 Scenario: Visitor SSO logs in with valid credentials
     Given a visitor on the login page

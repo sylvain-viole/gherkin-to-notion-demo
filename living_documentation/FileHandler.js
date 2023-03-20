@@ -3,15 +3,15 @@ import * as path from "path";
 
 export class FileHandler {
   /**
-   * 
-   * @param {String} path 
+   *
+   * @param {String} path
    */
   constructor(path) {
     this.path = path;
   }
 
   /**
-   * 
+   *
    * @param {String} extension without the "."
    * @returns {Array} files
    */
@@ -47,5 +47,9 @@ export class FileHandler {
       (all, folderContents) => all.concat(folderContents),
       []
     );
+  }
+
+  getFileContent(file) {
+    return fs.readFileSync(file, "utf-8").toString();
   }
 }

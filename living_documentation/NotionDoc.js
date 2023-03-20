@@ -79,4 +79,33 @@ export class NotionDoc {
       properties: properties,
     });
   }
+
+  /**
+   * 
+   * @param {String} pageId 
+   * @param {String} code 
+   * @returns 
+   */
+  async addGherkinBlock(pageId, code) {
+    return notion.blocks.children.append({
+      block_id: pageId,
+      children: [
+        {
+          type: "code",
+          code: {
+            caption: [],
+            rich_text: [
+              {
+                type: "text",
+                text: {
+                  content: code,
+                },
+              },
+            ],
+            language: "gherkin",
+          },
+        },
+      ],
+    });
+  }
 }
