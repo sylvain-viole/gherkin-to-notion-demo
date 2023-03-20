@@ -8,7 +8,7 @@
 @squad_connect
 
 
-Feature: User classic log in
+Feature: User classic log i
 
 Scenario: Visitor classic logs in with valid credentials
     Given a visitor on the login page
